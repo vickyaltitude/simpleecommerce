@@ -1,0 +1,28 @@
+/**
+ * SuccessMessage Component
+ * Displays success messages using Bootstrap alert
+ */
+
+const SuccessMessage = ({ message, onClose }) => {
+  if (!message) return null;
+
+  return (
+    <div
+      className="alert alert-success alert-dismissible fade show"
+      role="alert"
+    >
+      <i className="bi bi-check-circle-fill me-2"></i>
+      {message}
+      {onClose && (
+        <button
+          type="button"
+          className="btn-close"
+          onClick={onClose}
+          aria-label="Close"
+        ></button>
+      )}
+    </div>
+  );
+};
+
+export default SuccessMessage;
